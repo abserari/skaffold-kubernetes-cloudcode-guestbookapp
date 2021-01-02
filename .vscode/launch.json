@@ -1,0 +1,23 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run on Kubernetes",
+      "type": "cloudcode.kubernetes",
+      "request": "launch",
+      "skaffoldConfig": "${workspaceFolder}/skaffold.yaml",
+      "watch": true,
+      "cleanUp": false,
+      "portForward": true,
+      "imageRegistry": "yhyddr",
+      "debug": [
+        {
+          "image": "go-guestbook-frontend",
+          "sourceFileMap": {
+            "${workspaceFolder}\\src\\frontend": "/app"
+          }
+        }
+      ]
+    }
+  ]
+}
